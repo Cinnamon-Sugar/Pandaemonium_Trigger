@@ -1,0 +1,561 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="1c6ddfab-1ca2-4be1-a811-0fc4e74f77f2" Name="万魔殿 Trigger by Cinnamon Sugar" Enabled="true">
+    <Folders>
+      <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^1002$" Id="88281e2a-79d2-463f-8b8e-ac6a655b99c9" Name="P1N" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="Heavy Hand 死刑" Id="0818682d-b841-452e-a790-ada941deee6e" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:65F3:[^:]*:[^:]*:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="死刑，注意减伤" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="Slam Shut 转场AOE" Id="5d3072bc-b351-4aae-a0fb-c107dd0055aa" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:65EA:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Shining Cells 转场AOE" Id="4416a8de-bfd5-4b35-8afa-d163afb23517" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:65E9:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Pitiless Flail 击退接分摊" Id="db229532-e305-4854-b2ab-44d85bf842ce" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:65E5:[^:]*:[^:]*:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="准备分摊" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" UseTTSTextExpression="击退点你" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Warder's Wraith AOE" Id="a79460d3-23bf-429c-bc6d-c81869101472" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:65F4:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Hot Spell 火debuff" Id="8904562c-4ae3-40a4-95ef-2871372a8a9f" RegularExpression="^.{14}[^:]*1A:AB4:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去找冰" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Sequential="True" Name="Cold Spell 冰debuff" Id="73c1bfe4-6f9a-4f0c-8f76-2418d48949e3" RegularExpression="^.{14}[^:]*1A:AB3:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去找火" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="Gaoler's Flail 左右刀" Id="cb866f72-a192-4efe-bf25-57c42f9e8ff0" RegularExpression="^.{14}[^:]* 14:[^:]*:[^:]*:6DA(?&lt;leftright&gt;[23]):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去左边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" UseTTSTextExpression="去右边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="火光buff" Id="e8d96a26-3a8b-4d08-aa7a-ab7b8ba5a68d" RegularExpression="^.{14}[^:]*1A:893:[^:]*:[^:]*:[^:]*::[^:]*:[^:]*:(?&lt;firelight&gt;14[CD]):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去找光" VariableOp="SetString" VariableName="火光" VariableExpression="火" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${firelight}" ExpressionTypeL="String" ExpressionR="14C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" UseTTSTextExpression="去找光" VariableOp="SetString" VariableName="火光" VariableExpression="光" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${firelight}" ExpressionTypeL="String" ExpressionR="14D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Aetherchain 火光披萨" Id="10ada54b-3918-4b4c-8f70-76a779bc0b6b" RegularExpression="^.{14}[^:]* 14:[^:]*:[^:]*:65EB:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去找光" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="火" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" UseTTSTextExpression="去找火" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="光" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Aetherflail 火光左右刀" Id="1dbdc233-374b-4128-b43c-8e257dece2ac" RegularExpression="^.{14}[^:]* 14:[^:]*:[^:]*:65(?&lt;leftright&gt;E0|DF):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去左边找光" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="火" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="DF" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" UseTTSTextExpression="去左边找火" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="光" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="DF" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" UseTTSTextExpression="去右边找光" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="火" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="E0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" UseTTSTextExpression="去右边找火" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="光" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="E0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^1008$" Id="40db5f6d-912d-43f1-b4ea-3f7b88268528" Name="P4N" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="Elegant Eviscaeration 死刑" Id="9864cf15-4d40-47d8-8a33-586b2e801ce1" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A50:[^:]*:[^:]*:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="死刑，注意减伤" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="Acid Pinax 注意分散" Id="dcee1712-762a-4aef-a737-de18a067694f" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A3C:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="注意分散" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Shifting Strike 2 场边击退" Id="d7c4ad31-30a8-4483-a5a0-66ec7d2f9c77" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6DB2:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="场边击退" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Hell Skewer 躲开正面" Id="58bf2704-9acc-48e4-b6d7-7a9ce5b690e1" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A4F:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="躲开正面" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Levinstrike Pinax 远离场中" Id="234338f9-6ce1-48e9-978d-557dfb88ee85" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A3F:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="远离场中" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Lava Pinax 集合分摊" Id="54000dc9-9cc0-4ddc-84ef-9c45830f9838" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A3D:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="集合分摊" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Well Pinax 场中击退" Id="340ace6c-fe4a-4d5f-b725-f666599bce84" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A3E:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="场中击退" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Decollation AOE" Id="2795b802-5dc3-4bd3-a5e3-7b31ed6749c8" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A51:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Belone Bursts 撞球" Id="6b733771-c386-4c71-8578-2ff512756d38" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:69D9:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="准备撞球" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Belone Coils 踩塔" Id="a016ad5d-8026-41f3-baf8-5398e71ee99c" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:69DD:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="准备踩塔" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Bloodrake AOE" Id="5d9facd3-2b54-440a-8566-59a27f52f907" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A40:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Shifting Strike 1 扇形AOE" Id="a911b0da-6ef0-4a42-8d57-3c2a6e08705a" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6A4E:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="贴边躲AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^1006$" Id="26c1b2e6-2c92-466e-9b67-5c708c71e316" Name="P3N" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="Heat of Condemnation 死刑" Id="2b4f9bb1-18e1-416f-9175-75d2709a54b6" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:66B3:[^:]*:[^:]*:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="死刑，注意减伤" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="Devouring Brand 十字火焰" Id="cfc93292-57a4-4096-928a-e6713f3c5fa6" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6D82:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="远离十字火焰" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Experimental Fireplume 1 远离场中" Id="254a4cbe-49ad-4360-ae55-11a2cfb3d874" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6696:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="远离场中" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Experimental Fireplume 2 火焰轰炸" Id="832b5d28-4061-42fd-b2ec-87c876bb33da" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6698:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="火焰轰炸" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Right Cinderwing 右刀" Id="37694170-7a73-4f37-87aa-bceaf01aafb9" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:66B4:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去boss左边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Left Cinderwing 左刀" Id="65f748c4-8b31-402e-bd0d-a47fc1a228b6" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:66B5:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去boss右边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Experimental Charplume 分散" Id="54a8314d-9153-45c8-98d6-a8710cb62bad" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:669C:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="注意分散" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Fledgling Flight 四连刀" Id="593e8f98-0914-4091-bab9-15b2274a17b7" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:66AA:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="准备四连刀" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Seering Breeze 躲开黄圈" Id="1040a6d5-491b-43a6-8ef0-e24fe94665f0" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:66B6:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="躲开黄圈" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Scorched Exaltation AOE" Id="315c7cf9-8880-4498-bee0-a1f870ac8acf" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:66B8:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^1004$" Id="e78b2c74-5633-4a42-86a5-acbdd35e42df" Name="P2N" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="Doubled Impact 双T死刑" Id="a81cc1c1-a176-449b-add4-6b7c7043bcbf" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:680E:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="双T分摊死刑" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Sewage Deluge AOE" Id="82b93b3c-d0b8-4f8b-91a2-2de0bbcc8a72" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:67F6:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE，站排水口" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Sewage Eruption 三连黄圈" Id="1234b696-d9a4-4c81-aa61-f0fe5cc120d1" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:680C:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="三连黄圈" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Predatory Sight 贴贴" Id="526d0582-c71b-481b-ac16-933092a8112a" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:680A:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="准备贴贴" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Shockwave 击退" Id="c0c966c2-e9d4-4efe-b1bc-f32694bf8e3b" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6807:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="击退" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Coherence 分摊+核爆" Id="c8bbadd0-d516-4c0a-b841-bd7687ca1581" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6801:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="直线分摊，T远离" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Dissociation 分头行动" Id="f9b99c4d-9a6a-46da-9056-73ee288e81d0" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6806:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="注意躲头" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Spoken Cataract 3 头打左边" Id="1c873ee1-424e-4f4b-baec-95dbb8c4d749" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:67F9:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="黄箭头右侧贴边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Murky Depths AOE" Id="ccd3907c-ce6b-46f0-8936-f00af20966de" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:680F:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="AOE" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Tainted Flood 分散" Id="a755ea6a-6c5c-4136-9a6f-897b664ce91d" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:6808:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="注意分散" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Spoken Cataract 2 头打右边" Id="d003a0b3-ebda-486b-9a58-9251835191b2" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:67F7:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="黄箭头左侧贴边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Spoken Cataract 1 头打背后" Id="84589454-a23d-4954-b434-66758004109e" RegularExpression="^.{14}[^:]*14:[^:]*:[^:]*:67F8:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="黄箭头方向两侧" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="403ae7ac-11e0-4cf1-bc6f-5ada34d69167" Name="回收站" Enabled="false">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="false" Name="Aetherflail 火光左右刀" Id="abb7e9b2-4d29-4290-a2d3-fdde1847aa20" RegularExpression="^.{14}[^:]* 14:[^:]*:[^:]*:65(?&lt;leftright&gt;E0|DF):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去左边找光" VariableOp="SetString" VariableName="左右刀flag" VariableExpression="左光" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="火" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="DF" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" UseTTSTextExpression="去左边找火" VariableOp="SetString" VariableName="左右刀flag" VariableExpression="左火" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="光" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="DF" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" UseTTSTextExpression="去右边找光" VariableOp="SetString" VariableName="左右刀flag" VariableExpression="右光" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="火" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="E0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" UseTTSTextExpression="去右边找火" VariableOp="SetString" VariableName="左右刀flag" VariableExpression="右火" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:火光}" ExpressionTypeL="String" ExpressionR="光" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="E0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" VariableName="左右刀flag" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="2000">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="false" Name="Gaoler's Flail 左右刀" Id="ee5e6917-6bcd-4dd4-8c7e-c94a7cf2650d" RegularExpression="^.{14}[^:]* 14:[^:]*:[^:]*:6DA(?&lt;leftright&gt;[23]):">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="去左边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="左光" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="左火" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="右火" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="右光" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" UseTTSTextExpression="去右边" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${leftright}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="左光" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="左火" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="右火" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="右光" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" UseTTSTextExpression="去左边找光" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="左光" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" UseTTSTextExpression="去左边找火" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="左火" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" UseTTSTextExpression="去右边找光" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="右光" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" UseTTSTextExpression="去右边找火" VariableOp="SetString" VariableName="text" VariableExpression="←左" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:左右刀flag}" ExpressionTypeL="String" ExpressionR="右火" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers />
+  </ExportedFolder>
+</TriggernometryExport>
